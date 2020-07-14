@@ -5,15 +5,7 @@
         <h2><%= "#{@user.name}" %></h2>
     </div>
     <div>
-      <% if request_sent?(@user.id) == 'pending' %>
-        <button class="friend_request">Pending</button>
-      <% elsif request_sent?(@user.id) == 'rejected' %>
-        <button class="friend_request">
-          <%= link_to 'Invite to friendship',  send_request_path(@user.id), class: 'friend_request' %>
-        </button>
-      <% else %>
-        <%= nil %>
-      <% end %>
+      <%= render 'users/form' %>
     </div>
   </div>
   <article class="timeline">
