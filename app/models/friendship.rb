@@ -6,4 +6,13 @@ class Friendship < ApplicationRecord
   def self.get_request(receiver_id, sender_id)
     Friendship.where('receiver_id = ? and sender_id = ?', receiver_id, sender_id)
   end
+
+  def self.confirm_friend
+    self.update_attributes(status: 'accepted')
+    Friendship.create!(sender_id: self.receiver_id,
+                        receiver_id: self.sender_id,
+                    status: 'accepted')
+  end
+
+
 end

@@ -6,7 +6,6 @@ module FriendshipsHelper
 
     'rejected'
   end
-
   def sender_information(user_id)
     User.find_by(id: user_id)
   end
@@ -34,7 +33,9 @@ module FriendshipsHelper
     associated_posts.reverse
   end
 
-  def pending_requests
+    def pending_requests
     Friendship.where('receiver_id = ? and status = ?', current_user.id, 'pending').count
   end
+
+  
 end
