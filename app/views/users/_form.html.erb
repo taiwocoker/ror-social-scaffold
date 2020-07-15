@@ -1,0 +1,9 @@
+<% if request_sent?(@user.id) == 'pending' %>
+        <button class="friend_request">Pending</button>
+<% elsif request_sent?(@user.id) == 'rejected' %>
+        <button class="friend_request">
+          <%= link_to 'Invite to friendship',  send_request_path(@user.id), class: 'friend_request' %>
+        </button>
+<% else %>
+        <%= nil %>
+<% end %>
