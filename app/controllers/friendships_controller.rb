@@ -13,7 +13,7 @@ class FriendshipsController < ApplicationController
 
   def accept
     @request = Friendship.get_request(current_user, params[:sender_id])
-    @request.confirm_friend
+    @request.confirm_friend(current_user, params[:sender_id])
     redirect_to received_requests_path
   end
 
