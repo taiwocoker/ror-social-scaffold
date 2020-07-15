@@ -19,6 +19,4 @@ class User < ApplicationRecord
   def friends
     sent_requests.map { |friendship| friendship.sender_id if friendship.status == 'accepted' }.compact
   end
-
-
 end

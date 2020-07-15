@@ -8,11 +8,9 @@ class Friendship < ApplicationRecord
   end
 
   def self.confirm_friend
-    self.update_attributes(status: 'accepted')
-    Friendship.create!(sender_id: self.receiver_id,
-                        receiver_id: self.sender_id,
-                    status: 'accepted')
+    update_attributes(status: 'accepted')
+    Friendship.create!(sender_id: receiver_id,
+                       receiver_id: sender_id,
+                       status: 'accepted')
   end
-
-
 end
