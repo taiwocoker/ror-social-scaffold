@@ -10,7 +10,7 @@
         
       </div>
       <% if current_user %>
-      
+      <strong><%= current_user.name %></strong>
         <%= link_to received_requests_path do %>
           <i class="fas fa-user-friends" id="notify"></i>
           <% if pending_requests.positive? %>
@@ -19,9 +19,10 @@
               </span>
           <% end %>
         <% end %>  
-        <strong><%= current_user.name %></strong>
+
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>  
-      <% else %>
+        
+       <% else %>
         <%= link_to 'Sign in', user_session_path %>
       <% end %>
     </nav>
