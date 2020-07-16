@@ -9,7 +9,8 @@ RSpec.describe User, type: :model do
   describe 'associations' do
     it { should have_many(:posts) }
     it { should have_many(:comments) }
-    it { should have_many(:sent_requests).with_foreign_key(:sender_id).class_name('Friendship') }
-    it { should have_many(:received_requests).with_foreign_key(:receiver_id).class_name('Friendship') }
+    it { should have_many(:confirmed_friendships).with_foreign_key(:sender_id).class_name('Friendship') }
+    it { should have_many(:pending_friendships).with_foreign_key(:sender_id).class_name('Friendship') }
+    it { should have_many(:inverted_friendships).with_foreign_key(:receiver_id).class_name('Friendship') }
   end
 end
