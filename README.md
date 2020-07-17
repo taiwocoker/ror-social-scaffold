@@ -2,13 +2,13 @@
 > In this project, we first designed an [ERD diagram](https://github.com/evansinho/ror-social-scaffold/pull/1) which visually displays the database schema and structure.
 > We then added a friendship functionality using self-referencial relationships to the forked repositry.Database query improvements were made ontop of the friendship funtionality
 > Friends can be added via a request. A request can be cancelled by user or rejected/confirmed by friend.
->  tests are run using rspec unit tests for the models, rspec controller tests and then capybara integration tests.
+> 30 tests are run using rspec unit tests for the models, rspec controller tests and then capybara integration tests.
 ## Built With
 - Ruby v2.7
 - Ruby on Rails v6.0.3
 - Gems used for testing: Capybara, Rspec-Rails, Shoulda-matchers and FactoryBot
 ## Live Demo
-[Heroku App Link]()
+[Heroku App Link](https://fast-crag-10905.herokuapp.com/users/sign_in)
 ## Getting Started
 To get a local copy up and running follow these steps:
 ### Prerequisites
